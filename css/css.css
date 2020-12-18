@@ -1,0 +1,784 @@
+@charset "UTF-8";
+
+/*----------Généralités----------*/
+* {
+  box-sizing: content-box;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+main {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  background-color: #ededed;
+  font-family: 'Rajdhani', sans-serifs;
+}
+
+.section {
+  scroll-snap-align: end;
+}
+
+h1 {
+  font-family: "Major Mono Display", monospace;
+  color: white;
+}
+
+h2,
+nav a {
+  font-family: "Bebas Neue", cursive;
+}
+
+h2 {
+  font-size: 10vh;
+  text-align: center;
+}
+
+section {
+  padding-top: 10vh;
+  height: 90vh;
+}
+
+/*------------Bandeau de navigation-------------*/
+
+.bandeauNav {
+  z-index: 9999999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10vh;
+  padding: 0 5vw;
+  background-color: black;
+
+  display: flex;
+
+  flex-direction: row;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.bandeauNav a {
+  text-decoration: none;
+  color: white;
+  font-size: 4vh;
+  vertical-align: middle;
+}
+
+nav {
+
+  display: flex;
+
+  flex-direction: row;
+
+  flex-wrap: nowrap;
+}
+
+.menu {
+  padding: 0 2vw;
+}
+
+/*----------Footer-------------*/
+
+
+footer {
+  height: 5vh;
+  padding: 0 5vw;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  flex-direction: row;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+footer h2 {
+  color: white;
+  font-family: "Major Mono Display", monospace;
+  font-size: 2vh;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+/*----------CSS page index.html--------------*/
+
+
+/*-----------Header-----------*/
+
+header {
+
+  display: flex;
+  scroll-margin-top: 10vh;
+  margin-top: 10vh;
+  height: 90vh;
+  background-image: url(../images/bgAccueil.webp);
+  background-color: black;
+}
+
+header h1 {
+  margin: auto;
+  font-size: 15vh;
+}
+
+/*----------------Section à propos----------------*/
+
+.about {
+  height: 90vh;
+
+  grid-column: 2/3;
+
+  display: grid;
+
+  align-items: baseline;
+
+  justify-content: center;
+
+  align-items: center;
+
+  grid-template: 10vh 80vh / repeat(3, 1fr);
+}
+
+.about h2 {
+  grid-column-start: 2;
+  font-size: 10vh;
+  text-align: center;
+  height: 10vh;
+}
+
+.categorie {
+  margin: 16vh auto auto auto;
+  width: 289px;
+  height: 514px;
+  background-repeat: no-repeat;
+  background-size: 45%, contain;
+  background-position: center 20%, center;
+}
+
+.categorie a {
+
+  display: grid;
+  height: 410px;
+
+  grid-template-rows: 2fr 1fr;
+
+  justify-content: center;
+  text-decoration: none;
+}
+
+.categorie p {
+  grid-row-start: 2;
+  margin-bottom: auto;
+  text-align: center;
+  font-family: "Bebas Neue", cursive;
+  color: white;
+  font-size: 5vh;
+}
+
+.presentation {
+  grid-column-start: 1;
+
+  grid-row-start: 2;
+  background-image: url(../images/bitmoji3.svg), url(../images/bgPresentation.svg);
+}
+
+.skills {
+  grid-column-start: 2;
+
+  grid-row-start: 2;
+  background-image: url(../images/competence.svg), url(../images/bgCompétences.svg);
+}
+
+.parcours {
+  grid-column-start: 3;
+
+  grid-row-start: 2;
+  background-image: url(../images/map.svg), url(../images/bgParcours.svg);
+}
+
+.pictoAbout {
+  height: 25vh;
+  margin: auto;
+
+  grid-row-start: 1;
+}
+
+
+/*--------------CSS mentionsLegales.html------------*/
+
+.mainMent {
+  padding-top: 10vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  flex-wrap: nowrap;
+}
+
+.mainMent h2 {
+  padding-top: 2vh;
+}
+
+.pMentions,
+h3 {
+  font-family: "Rajdhani", sans-serif;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+h3 {
+  padding-top: 2vh;
+}
+
+.pMentions {
+  padding-bottom: 1vh;
+  padding-top: 1vh;
+}
+
+/*------------CSS page presentationComplete.html----------*/
+
+
+
+.presentationOP,
+.parcoursOP,
+.competencesOP {
+  display: -ms-grid;
+  display: grid;
+
+  grid-template: 90vh/5vw 35vw 60vw;
+}
+
+.parcoursOP {
+  height: 85vh;
+}
+
+.bandeauNoir {
+  grid-column: 2/3;
+  background-color: black;
+  display: -ms-grid;
+  display: grid;
+
+  grid-template: 10vh 50vh 2vh 5vw/0.5fr 3fr 10fr 0.5fr;
+}
+
+.imageAccompagnement {
+  grid-area: 2/2/3/4;
+  background-position: center;
+  background-size: cover;
+  background-size: 400px;
+  background-repeat: no-repeat;
+}
+
+.imgAC1 {
+  background-image: url(../images/presentation.webp);
+  border-radius: 5vh;
+}
+
+.imgAC2 {
+  background-image: url(../images/knowledge.webp);
+}
+
+.imgAC3 {
+  background-image: url(../images/studdies.webp);
+}
+
+.logos {
+  grid-area: 4/2/5/3;
+
+  display: inline-flex;
+
+  justify-content: space-between;
+}
+
+.logos img {
+  width: 5vw;
+  max-width: 64px;
+  height: 5vw;
+  max-height: 64px;
+}
+
+.contenu {
+
+  display: grid;
+
+  align-content: center;
+
+  grid-template: repeat(2, 10vh) 3vh 62vh 5vh/5vw 50vw 5vw;
+}
+
+.contenu h2 {
+  grid-area: 2/2/3/3;
+}
+
+.contenuPresentation {
+  grid-area: 4/2/5/3;
+}
+
+.contenuPresentation p {
+  padding-top: 5%;
+  max-width: 40vw;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 600;
+  font-size: 18pt;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+}
+
+.contenuPresentation strong {
+  color: #dc00ff;
+  font-weight: 600;
+}
+
+.contenuCompetences {
+  padding-top: 5%;
+
+  grid-area: 4/2/5/3;
+
+  display: flex;
+
+  flex-direction: row;
+
+  flex-wrap: wrap;
+
+  align-content: space-around;
+
+  justify-content: space-between;
+}
+
+.boitesCompetence:nth-child(2n + 1) {
+  margin-bottom: 25px;
+}
+
+.boitesCompetence {
+  height: 15vw;
+  width: 15vw;
+  border: 5px solid black;
+  border-radius: 20%;
+
+  display: grid;
+
+  grid-template-rows: 1fr 2fr;
+
+  align-items: center;
+  text-align: center;
+}
+
+.boitesCompetence h3 {
+  font-family: "Bebas Neue", cursive;
+  padding: 0;
+  font-size: 200%;
+
+  align-self: flex-end;
+}
+
+.boitesCompetence p {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 600;
+  margin: auto;
+  padding-right: 10px;
+  padding-left: 10px;
+  text-align: justify ;
+  font-size: 20px;
+}
+
+.contenuParcours {
+  grid-area: 4/2/5/3;
+}
+
+.contenuParcours a {
+  text-decoration: none;
+  color: #ededed;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline * {
+  box-sizing: border-box;
+}
+
+.content {
+  padding: 20px 0;
+  color: #ededed;
+  background-color: black;
+  position: relative;
+  border-radius: 6px;
+}
+
+.content h3 {
+  padding: 0;
+  padding-left: 10px;
+  font-size: 25px;
+}
+
+.content p {
+  padding-top: 10px;
+  padding-right: 25px;
+  padding-left: 25px;
+  text-align: justify;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 500;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: black;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: #ededed;
+  border: 4px solid black;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.right::after {
+  left: -16px;
+}
+
+.left {
+  left: 0;
+}
+
+.left h3 {
+  text-align: end;
+  padding-right: 10px;
+}
+
+.right {
+  left: 50%;
+}
+
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid black;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent black;
+}
+
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid black;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent black transparent transparent;
+}
+
+@media screen and (max-width: 1579px) {
+  .boitesCompetence {
+    height: 23vh;
+  }
+  /* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+  /* Full-width containers */
+  .container {
+    width: 75%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+    left: 60px;
+    border: medium solid #ededed;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent black transparent transparent;
+  }
+  /* Make sure all circles are at the same spot */
+  .left::after,
+  .right::after {
+    left: 15px;
+  }
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+  .left h3 {
+    text-align: start;
+  }
+}
+
+
+/*-----------CSS partie contact-------------*/
+
+
+.contact {
+  height: 85vh;
+
+  display: grid;
+
+  grid-template-rows: 10vh 75vh;
+
+  justify-content: center;
+}
+
+label{
+  border: 2px solid green;
+  margin-left: 20px;
+}
+
+
+.contact div {
+  border: 2px solid red;
+}
+
+.formulaire {
+  grid-row: 2/3;
+  padding-top: 5vh;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 50%);
+
+  grid-template-rows: repeat(2, 22.5%) 45% 10%;
+  width: 500px;
+  height: 500px;
+}
+.formulaire input,
+.formulaire textarea,
+.formulaire button{
+  outline: none;
+  border: none;
+  width: calc(100% - 30px);
+  border-radius: 25px;
+  background: white;
+  min-height: 50px;
+  padding-left: 30px;
+  
+}
+
+
+
+button:hover{
+  cursor: pointer;
+}
+
+
+
+.inputName {
+  grid-area: 1/1/2/3;
+}
+
+.inputMail {
+  grid-area: 2/1/3/3;
+}
+
+.message {
+  grid-area: 3/1/4/3;
+}
+
+.submit {
+  grid-area: 4/1/5/2;
+}
+
+.real {
+
+  display: grid;
+
+  grid-template-rows: 10vh 80vh;
+
+  justify-content: center;
+}
+
+.real h2 {
+  grid-row: 1/2;
+}
+
+.petitesRealisations {
+  grid-row: 2/3;
+
+  display: grid;
+
+  grid-template-rows: repeat(2, 1fr);
+
+  grid-template-columns: repeat(2, 1fr);
+
+  justify-content: center;
+
+  align-items: center;
+  width: 70vh;
+  height: 70vh;
+
+  flex-wrap: wrap;
+
+  transform: none;
+
+  transition: transform 500ms;
+
+  margin-top: 3vh;
+}
+
+.boiteMini {
+  height: 30vh;
+  width: 30vh;
+  margin: auto;
+  overflow: hidden;
+  background-color: inherit;
+
+  transform: none;
+
+  transition: -webkit-transform 500ms;
+  transition: transform 500ms;
+  transition: transform 500ms, -webkit-transform 500ms;
+  border: 1px solid #ededed;
+  border-radius: 100px;
+}
+
+.boiteMini img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter: blur(5px);
+  opacity: 70%;
+}
+
+.boiteMini img:hover {
+  filter: blur(0);
+  opacity: 100%;
+}
+
+.popup {
+  visibility: hidden;
+
+  display: grid;
+
+  grid-template-columns: 90vw 10vw;
+
+  grid-template-rows: repeat(2, 10vh) 80vh;
+
+  justify-content: center;
+
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  background-color: rgba(20, 20, 20, 0.95);
+  width: 100vw;
+  height: 100vh;
+}
+
+.popupContenu {
+  grid-area: 2/1/3/3;
+  padding-top: 10vh;
+
+  display: grid;
+
+  grid-template-columns: 60% 40%;
+
+  align-content: center;
+
+  justify-content: center;
+  margin-top: auto;
+  height: 70vh;
+  margin: auto;
+
+  transform: translateY(-3vh);
+}
+
+.popupContenu p {
+
+  font-weight: 600;
+  font-size: 3vh;
+
+  grid-column: 2/3;
+
+  align-self: center;
+  color: white;
+  text-align: justify;
+  margin: 0 1vw;
+  margin-right: 5vw;
+  border: 2px solid cyan;
+}
+
+.popupImg {
+  grid-column: 1/2;
+  max-height: 70vh;
+  width: 50vw;
+  margin: auto;
+  border: 2px solid red;
+}
+
+.popupImg img {
+  max-height: 70vh;
+  width: 50vw;
+
+  object-fit: contain;
+}
+
+.popup:target {
+  visibility: visible;
+}
+
+.exit {
+  /*croix ppur fermer*/
+
+  grid-area: 2/2/3/3;
+  width: 35%;
+  z-index: 10;
+  margin: auto;
+
+  transform: none;
+
+  transition: -webkit-transform 500ms;
+  transition: transform 500ms;
+  transition: transform 500ms, -webkit-transform 500ms;
+  border: 2px solid red;
+}
+
+.exit:hover {
+  transform: scale(1.1) rotate(90deg);
+}
