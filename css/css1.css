@@ -6,7 +6,7 @@
     margin: 0;
     overflow: hidden;
 }
-main {
+main:not(.mainMent) {
     overflow-y: scroll;
     scroll-behavior: smooth;
     width: 100vw;
@@ -91,8 +91,7 @@ footer {
     height: 5vh;
     padding: 0 5vw;
     background-color: black;
-    display: -webkit-box;
-    display: -ms-flexbox;
+
     display: flex;
 
     flex-direction: row;
@@ -353,7 +352,7 @@ footer p {
 /*---------Section contact----------*/
 
 .contact {
-    height: 85vh;
+    height: 95vh;
 
     display: grid;
 
@@ -428,4 +427,372 @@ button:hover img {
 
 .submit {
     grid-area: 4/1/5/2;
+}
+
+/*-----------CSS Onepage présentation----------*/
+
+.presentationOP,
+.parcoursOP,
+.competencesOP {
+    width: 100vw;
+    height: 90vh;
+    display: grid;
+    padding: 0;
+
+    grid-template: 100vh/8vw 32vw 60vw;
+}
+
+/*----------Généralités---------*/
+
+.contenu {
+    grid-area: 1/3/1/4;
+    display: grid;
+
+    align-content: center;
+
+    grid-template: 10vh 0vh 1vh 71vh /5vw 50vw 5vw;
+}
+.contenu h2 {
+    grid-area: 1/2/2/3;
+}
+
+/*-----------bandeau noir sur la gauche-------------*/
+.bandeauNoir {
+    grid-area: 1/2/1/3;
+    background-color: black;
+    display: grid;
+    grid-template: 2.5fr 20fr 0.5fr 2fr 4fr / 1fr 10fr 1fr;
+    justify-content: center;
+}
+
+.imageAccompagnement {
+    grid-area: 2/2/3/3;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.contactOP {
+    grid-area: 4/2/5/3;
+    display: grid;
+    grid-template: 1fr/4fr 1fr 4fr 1fr 4fr;
+    justify-content: center;
+    align-items: center;
+}
+.contactOP a {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.contactOP img {
+    height: 100%;
+}
+
+.contactOP a:hover {
+    transform: scale(0.95);
+}
+.rx1 {
+    grid-area: 1/1/2/1;
+}
+.rx2 {
+    grid-area: 1/3/2/4;
+}
+.rx3 {
+    grid-area: 1/5/2/6;
+}
+.contactOP p {
+    grid-area: 1/4/1/5;
+    border: 2px solid red;
+    width: min-content;
+    margin: auto;
+}
+
+/*----------Section présentation----------*/
+.imgAC1 {
+    background-image: url(../images/portrait.webp);
+}
+.presentationOP {
+    padding-top: 10vh;
+}
+
+.contenuPresentation {
+    grid-area: 4/2/5/3;
+}
+
+.contenuPresentation p {
+    padding-top: 5%;
+    max-width: 40vw;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 600;
+    font-size: 18pt;
+    margin: 0 auto;
+    text-align: justify;
+    color: black;
+}
+
+strong {
+    color: #dc00ff;
+    font-weight: 600;
+}
+
+/*-----------section competences-----------*/
+
+.imgAC2 {
+    background-image: url(../images/competences.webp);
+}
+.competencesOP {
+    height: 100vh;
+}
+.ccOP {
+    padding-top: 10vh;
+}
+.plusGrand {
+    grid-template: 5.5fr 20fr 0.5fr 2fr 1fr / 1fr 10fr 1fr !important;
+}
+
+.contenuCompetences {
+    padding-top: 5%;
+
+    grid-area: 4/2/5/3;
+
+    display: flex;
+
+    flex-direction: row;
+
+    flex-wrap: wrap;
+
+    align-content: space-around;
+
+    justify-content: space-between;
+}
+
+.boitesCompetence {
+    height: 14vw;
+    width: 14vw;
+    max-width: 400px;
+    max-height: 400px;
+    border: 0.5vw solid black;
+    border-radius: 20%;
+
+    display: grid;
+
+    grid-template-rows: 1fr 3fr;
+
+    align-items: center;
+    text-align: center;
+}
+
+.boitesCompetence h3 {
+    font-family: "Bebas Neue", cursive;
+    padding: 0;
+    font-size: 2vw;
+
+    align-self: flex-end;
+}
+
+.boitesCompetence p {
+    font-weight: 600;
+    margin: auto;
+    padding: 0 10px;
+    text-align: center;
+    font-size: 1vw;
+    color: black;
+}
+
+.contenuParcours {
+    grid-area: 4/2/5/3;
+}
+.boitesCompetence:hover {
+    background-color: black;
+}
+.boitesCompetence:hover h3,
+.boitesCompetence:hover p {
+    color: #fffa00;
+}
+
+/*------------Section Parcours--------------*/
+
+.imgAC3 {
+    background-image: url(../images/parcours.webp);
+}
+.contenuParcours * {
+    box-sizing: border-box;
+    overflow: initial;
+}
+.contenuParcours {
+    grid-area: 4/2/5/3;
+}
+
+.contenuParcours a {
+    text-decoration: none;
+    color: #ededed;
+}
+.contenuParcours a:hover {
+    color: #fffa00;
+}
+/*------timeline-------*/
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.timeline::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    background-color: black;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+.container {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    z-index: 999;
+}
+/*------cercles sur la timeline------*/
+.container::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: #ededed;
+    border: 4px solid black;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+.left {
+    left: 0;
+}
+.right {
+    left: 50%;
+}
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid black;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent black;
+}
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid black;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent black transparent transparent;
+}
+.right::after {
+    left: -16px;
+}
+
+.content {
+    padding: 20px 0;
+    color: #ededed;
+    background-color: black;
+    position: relative;
+    border-radius: 6px;
+}
+
+.content h3 {
+    padding: 0;
+    padding-left: 10px;
+    font-size: 25px;
+}
+
+.content p {
+    padding-top: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
+    text-align: justify;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 500;
+}
+
+.left h3 {
+    text-align: end;
+    padding-right: 10px;
+}
+
+@media screen and (max-width: 1579px) {
+    /* Place la timeline à gauche */
+    .timeline::after {
+        left: 31px;
+    }
+    /* les bulles prennent toute la largeur du parent */
+    .container {
+        width: 75%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    /* les fleches des bulles pointent à gauche */
+    .container::before {
+        left: 60px;
+        border: medium solid #ededed;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent black transparent transparent;
+    }
+    /* tous les points de la timeline sont au bon endroit */
+    .left::after,
+    .right::after {
+        left: 15px;
+    }
+
+    .right {
+        left: 0%;
+    }
+    .left h3 {
+        text-align: start;
+    }
+}
+
+/*-----------Css mentions legales----------*/
+
+.mainMent {
+    padding-top: 10vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex-wrap: nowrap;
+}
+
+.bodyMent {
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.mainMent h2 {
+    padding-top: 2vh;
+}
+
+.pMentions,
+.mainMent h3 {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    color: black;
+}
+
+.mainMent h3 {
+    padding-top: 2vh;
+}
+
+.pMentions {
+    padding-bottom: 1vh;
+    padding-top: 1vh;
 }
