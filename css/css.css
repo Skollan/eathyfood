@@ -235,13 +235,13 @@ header h1 {
 }
 
 .pMentions,
-h3 {
+.mainMent h3 {
   font-family: "Rajdhani", sans-serif;
   padding-left: 5vw;
   padding-right: 5vw;
 }
 
-h3 {
+.mainMent h3 {
   padding-top: 2vh;
 }
 
